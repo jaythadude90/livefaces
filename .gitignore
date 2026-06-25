@@ -26,3 +26,18 @@ yarn-error.log*
 
 # Environment files (local configs)
 /.env.*
+
+# Codex Prompt: Integrate LiveFaces Stripe Setup
+
+Apply the LiveFaces Stripe setup package to this repository.
+
+Requirements:
+1. Copy `.env.example` to the project root.
+2. Add the `server/` folder as a Node/Express TypeScript backend.
+3. Install server dependencies with `cd server && npm install`.
+4. Confirm the webhook route is registered before `express.json()`.
+5. Keep `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` server-only.
+6. Use `EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY` only in frontend/mobile code.
+7. Add premium gates to caption generation, high-res export, and unlimited avatars by reading `/api/subscription/:userId`.
+8. Do not commit `.env`.
+9. Commit changes with: `feat: add stripe setup package`.
