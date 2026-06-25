@@ -25,7 +25,18 @@ yarn-debug.log*
 yarn-error.log*
 
 # Environment files (local configs)
+/.env
 /.env.*
+!/.env.example
+
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Build outputs
+server/dist/
+dist/
+.expo/
 
 # Codex Prompt: Integrate LiveFaces Stripe Setup
 
