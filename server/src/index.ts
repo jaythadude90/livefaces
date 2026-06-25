@@ -1,15 +1,15 @@
 import express from 'express';
 import cors from 'cors';
 import { env } from './env.js';
-import { webhookRouter } from './routes/webhook.js';
+import { stripeEventsRouter } from './routes/stripeEvents.js';
 import { checkoutRouter } from './routes/checkout.js';
 import { subscriptionRouter } from './routes/subscription.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
 
-// Webhooks must be registered before JSON body parsing.
-app.use('/api/webhooks', webhookRouter);
+// Stripe event route must be registered before JSON body parsing.
+app.use('/api/webhooks', stripeEventsRouter);
 
 app.use(cors());
 app.use(express.json());
